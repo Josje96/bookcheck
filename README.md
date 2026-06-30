@@ -44,35 +44,6 @@ intent for more on why this project exists and how it's meant to be used.
 7. Open the frontend, upload a manuscript, pick an analysis engine
    (Gemini / DeepSeek / local Ollama model), and run.
 
-## Roadmap
-
-### Done
-
-- Multi-provider pipeline: Ollama (local), Gemini, DeepSeek - swappable
-  per run, including for chat
-- Chapter summaries, murky-spot flags, beta-reader-style overall
-  impression
-- Character profiles (role, arc, strengths/weaknesses, species,
-  aliases), relationship map, visual timeline, locations
-- Deterministic duplicate-passage detection + verified-contradiction
-  pipeline (LLM re-reads source before a contradiction is reported)
-- DOCX/PDF upload, re-run on the same manuscript without re-uploading
-- Persistent chat grounded in the story bible, with streamed
-  "thinking" + "answer" channels
-- Theming, last-run summary, toasts, polish pass
-
-### Now - polish & robustness
-
-- Chat: ability to clear context / start a new conversation, and
-  switch which character/thread you're focused on
-- Investigate undercounted characters on some DeepSeek runs
-- Per-character timeline in chat ("what scenes did I miss with X")
-- Pin an exact model per pipeline pass (not just per provider)
-
-### Next - deployment
-
-- Docker Compose file for single-command startup
-- Hardware-aware onboarding: detect whether Ollama is present, gauge
   available VRAM/RAM, and either recommend a local model size or steer
   the user toward a cloud key if local would be too slow
 
