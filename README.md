@@ -46,8 +46,3 @@ intent for more on why this project exists and how it's meant to be used.
 
   available VRAM/RAM, and either recommend a local model size or steer
   the user toward a cloud key if local would be too slow
-
-### Later - SaaS
-
-- Host as a pay-as-you-go hosted service, so users who don't want to
-  manage API keys or local hardware at all can just use it
