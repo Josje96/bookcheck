@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bookcheck</title>
+    <script>
+      // Apply saved theme/mode before paint to avoid a flash of the wrong theme.
+      (function () {
+        try {
+          var m =
+            localStorage.getItem("bc-mode") ||
+            (window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light")
+          var t = localStorage.getItem("bc-theme") || "violet"
+          document.documentElement.classList.toggle("dark", m === "dark")
+          document.documentElement.dataset.theme = t
+        } catch (e) {}
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

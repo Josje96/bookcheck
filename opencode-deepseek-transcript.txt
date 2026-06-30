@@ -1,0 +1,36 @@
+when using deepseek through this harness it is not providing any characters. but seems to work with gemini flash 2.5 documentation should be in the readme and goals should be in the refinement,txt
+First, fixing the DeepSeek client — the thinking param sends {"type": "disabled"} which is likely invalid for the DeepSeek API. Should omit it entirely when disabled. Also chat_json doesn't pass think through to _complete.
+
+Now update the README to document DeepSeek support:
+
+Here's what I did:
+
+1. Fixed DeepSeek client (bookcheck/deepseek_client.py):
+
+_complete() was sending "thinking": {"type": "disabled"} — the DeepSeek API expects thinking to be omitted when disabled, not set to disabled. Changed to only include the field when thinking is enabled.
+chat_json() wasn't passing think through to _complete(), so extraction calls that passed think=False were relying on the default instead of being explicitly passed.
+2. Updated README — added DeepSeek as a documented provider (was only mentioning Ollama and Gemini), added a provider comparison table, and mentioned the DeepSeek key in prerequisites.
+
+3. Reorganized refinement.txt — structured into clear goal phases (current polish, next deployment, final SaaS) with checkboxes for tracking, preserving the Gemini vs DeepSeek comparison notes below.
+
+The root cause of DeepSeek returning no characters was likely the thinking parameter format. When the extraction call sets think=False, the client was sending {"thinking": {"type": "disabled"}} which may have caused the model to return empty or malformed responses. After the fix, thinking is simply omitted when disabled, matching the DeepSeek API spec.
+
+- [ ] fix relationships section: group same character's multiple relation types into bubbles
+- [ ] fix chat history lost on navigation (persist across pages)
+- [ ] default chat model to whatever report was last run with (still allow override)
+- [ ] support docx and pdf uploads
+
+these are all that is left on the todo for tonight can you handle it?
+Let me start by exploring the frontend structure and the relevant backend code.
+
+Now I'll implement all four tasks. Let me start with the frontend changes in parallel.
+
+Now update Chat.tsx to persist history in localStorage and default to the last run's provider/model:
+
+Now update UploadPanel.tsx to accept .docx and .pdf:
+
+Now update the backend: add file parsing for docx/pdf, and add last_provider/last_model to health.
+
+Now update api.py to use the file parser in the file upload path and add last_provider/last_model to health:
+
+Now update the frontend Health type and Chat.tsx to use last_provider:

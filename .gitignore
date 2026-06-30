@@ -1,0 +1,9 @@
+data/
+reports/
+__pycache__/
+*.pyc
+.venv/
+
+# Secrets — never commit
+.env
+gemini-stuff
