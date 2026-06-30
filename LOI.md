@@ -7,8 +7,8 @@ I built BookCheck to give her an instant, automated "first-pass" read. Something
 
 Once we saw it in action, we realized this wasn't just useful for her. It has real value for any independent author (or editor) working on a budget, trying to polish their draft before handing it off to human eyes.
 
-Why It's Open Source (GPL v3)
-I decided to open-source this project because I believe powerful tools shouldn't be locked behind expensive corporate paywalls. However, because this project represents genuine value and hard work, I have licensed it under the GNU General Public License v3 (GPL v3).
+Why It's Open Source (AGPL v3)
+I decided to open-source this project because I believe powerful tools shouldn't be locked behind expensive corporate paywalls. However, because this project represents genuine value and hard work, I have licensed it under the GNU Affero General Public License v3 (AGPL v3).
 
 What it means is simple:
 
