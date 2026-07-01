@@ -1,5 +1,7 @@
 # BookCheck
 
+Check out the demo [Here}(https://ai-book-analysis.pages.dev/)
+
 BookCheck gives authors an automated first-pass read of a novel: chapter
 summaries, character profiles, a timeline, relationship map, and a
 "things to fix" list (duplicate passages, draft notes, verified
