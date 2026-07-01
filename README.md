@@ -1,6 +1,6 @@
 # BookCheck
 
-Check out the demo [Here}(https://ai-book-analysis.pages.dev/)
+Check out the demo [Here](https://ai-book-analysis.pages.dev/)
 
 BookCheck gives authors an automated first-pass read of a novel: chapter
 summaries, character profiles, a timeline, relationship map, and a
